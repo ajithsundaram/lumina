@@ -1,0 +1,68 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f7f7f7;
+  padding: 20px;
+  margin: 0;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+.section {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input, textarea, button {
+  font-family: inherit;
+}
+
+input, textarea {
+  border: 1px solid #d0d0d0;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+button {
+  background: #372170;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #372170;
+}
+
+#results table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#results th, #results td {
+  border: 1px solid #ddd;
+  padding: 6px;
+  font-size: 13px;
+}
+
+#results th {
+  background: #eee;
+}

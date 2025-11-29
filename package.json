@@ -1,0 +1,17 @@
+{
+  "name": "mysql-ai-desktop",
+  "version": "0.1.0",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "mysql2": "^3.11.0",
+    "node-fetch": "^3.3.2",
+    "sql-formatter": "^15.6.10"
+  }
+}
