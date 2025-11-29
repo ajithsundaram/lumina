@@ -3,8 +3,6 @@ async function getFetch() {
   return mod.default;
 }
 
-
-
 const { formatSQL } = require('../utils/sqlFormatter');
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
@@ -21,16 +19,13 @@ function buildSchemaPrompt(schema) {
     });
   }
 
-  s += '\n for insert queries use id from 1 for enum column always use the table meta provided for FKs insert null if possible , Return ONLY the full SQL query. No explanations, no markdown.\n';
+  s += '\n use exact enum values from the provided schema meta for conditional matching, Return ONLY the full SQL query. No explanations, no markdown.\n';
   return s;
 }
 
 async function generateSQLFromText(naturalLanguage, schema, model) {
   const prompt = buildSchemaPrompt(schema);
   const apitoken = process.env.OPENROUTER_API_KEY;
-
-  console.log('Using OpenRouter model:', model || MODEL);
-  console.log('Using OpenRouter API key:', apitoken);
 
   const response = await fetch(OPENROUTER_URL, {
     method: 'POST',
