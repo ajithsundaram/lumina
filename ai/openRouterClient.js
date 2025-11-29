@@ -3,6 +3,8 @@ async function getFetch() {
   return mod.default;
 }
 
+
+
 const { formatSQL } = require('../utils/sqlFormatter');
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
@@ -25,11 +27,15 @@ function buildSchemaPrompt(schema) {
 
 async function generateSQLFromText(naturalLanguage, schema, model) {
   const prompt = buildSchemaPrompt(schema);
+  const apitoken = process.env.OPENROUTER_API_KEY;
+
+  console.log('Using OpenRouter model:', model || MODEL);
+  console.log('Using OpenRouter API key:', apitoken);
 
   const response = await fetch(OPENROUTER_URL, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer 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`,
+      'Authorization': `Bearer ${apitoken}`,
       'Content-Type': 'application/json',
       'HTTP-Referer': 'localhost',
       'X-Title': 'LUMINA DB'

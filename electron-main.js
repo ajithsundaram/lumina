@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { createMySQLClient } = require('./db/mysqlClient');
 const { generateSQLFromText } = require('./ai/openRouterClient');
+const dotenv = require('dotenv');
+dotenv.config(); 
 
 let mainWindow;
 let dbClient = null; // store current DB client
