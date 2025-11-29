@@ -19,7 +19,7 @@ function buildSchemaPrompt(schema) {
     });
   }
 
-  s += '\n use exact enum values from the provided schema meta for conditional matching, Return ONLY the full SQL query. No explanations, no markdown.\n';
+  s += '\n use exact enum values from the provided schema meta for conditional matching, if you are not able to generate sql Return ONLY the full EFFICIENT SQL query. No explanations, no markdown.\n';
   return s;
 }
 
